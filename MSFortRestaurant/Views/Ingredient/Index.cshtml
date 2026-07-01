@@ -1,0 +1,99 @@
+﻿@model IEnumerable<Ingredient>
+@{
+    ViewBag.Title = "List of Restaurant Ingredients";
+}
+
+<!-- Original simple layout preserved for reference -->
+<!--
+<h1>Ingredients</h1>
+<a asp-action="Create" class="btn btn-primary">Create New Ingredient</a>
+<table class="table table-bordered">
+... original table ...
+</table>
+-->
+
+<!-- Enhanced ingredient index: card, search, colorful actions -->
+<div class="container">
+    <div class="card shadow-sm mb-4">
+        <div class="card-body">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+                <div>
+                    <h2 class="h4 mb-0"><i class="bi bi-box-seam-fill text-warning"></i> Ingredients</h2>
+                    <small class="text-muted">Manage the ingredients used in your menu</small>
+                </div>
+                <div class="d-flex align-items-center gap-2">
+                    <div class="input-group">
+                        <span class="input-group-text bg-white"><i class="bi bi-search"></i></span>
+                        <input id="ingredientSearch" type="search" class="form-control" placeholder="Search ingredients..." aria-label="Search ingredients">
+                    </div>
+                    <a asp-action="Create" class="btn btn-accent ms-2"><i class="bi bi-plus-lg"></i> Add Ingredient</a>
+                </div>
+            </div>
+
+            <div class="table-responsive">
+                <table class="table table-hover align-middle" id="ingredientsTable">
+                    <thead class="table-light">
+                        <tr>
+                            <th style="width:6rem;">#</th>
+                            <th>Name</th>
+                            <th style="width:18rem;">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @if (Model != null && Model.Any())
+                        {
+                            var idx = 1;
+                            foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td><span class="badge bg-secondary">@idx</span></td>
+                                    <td class="ingredient-name">@Html.DisplayFor(modelItem => item.Name)</td>
+                                    <td>
+                                        <div class="btn-group" role="group" aria-label="Actions">
+                                            <a asp-action="Details" asp-route-id="@item.IngredientId" class="btn btn-sm btn-outline-primary"><i class="bi bi-eye"></i> Details</a>
+                                            <a asp-action="Edit" asp-route-id="@item.IngredientId" class="btn btn-sm btn-outline-warning"><i class="bi bi-pencil-square"></i> Edit</a>
+                                            <a asp-action="Delete" asp-route-id="@item.IngredientId" class="btn btn-sm btn-outline-danger"><i class="bi bi-trash"></i> Delete</a>
+                                        </div>
+                                    </td>
+                                </tr>
+                                idx++;
+                            }
+                        }
+                        else
+                        {
+                            <tr>
+                                <td colspan="3" class="text-center text-muted py-4">No ingredients found. Click "Add Ingredient" to create one.</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    /* Page-specific styles */
+    #ingredientSearch { min-width: 260px; }
+    .btn-accent { padding: .45rem .8rem; }
+    .ingredient-name { font-weight: 600; }
+    .table-hover tbody tr:hover { background: linear-gradient(90deg, rgba(255,122,24,0.03), rgba(255,122,24,0.02)); }
+</style>
+
+<script>
+    (function () {
+        const input = document.getElementById('ingredientSearch');
+        const table = document.getElementById('ingredientsTable');
+        if (!input || !table) return;
+        input.addEventListener('input', function () {
+            const q = this.value.trim().toLowerCase();
+            const rows = table.querySelectorAll('tbody tr');
+            rows.forEach(r => {
+                const nameCell = r.querySelector('.ingredient-name');
+                if (!nameCell) return; // skip empty placeholder row
+                const text = nameCell.textContent.trim().toLowerCase();
+                r.style.display = text.indexOf(q) !== -1 ? '' : 'none';
+            });
+        });
+    })();
+</script>

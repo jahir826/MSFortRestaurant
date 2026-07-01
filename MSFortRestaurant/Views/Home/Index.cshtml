@@ -1,0 +1,160 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+<!-- Enhanced realistic home page inspired by layout theme -->
+<section class="home-hero py-5">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-7 text-white">
+                <h1 class="display-3 fw-bold">Delicious meals, delivered from our kitchen to your table</h1>
+                <p class="lead mb-4">Explore chef-curated recipes, order fresh seasonal dishes, and get realtime order updates.</p>
+                <p>
+                    <a asp-area="" asp-controller="Product" asp-action="Index" class="btn btn-accent btn-lg me-2">Explore Menu</a>
+                    <a asp-area="" asp-controller="Order" asp-action="Create" class="btn btn-accent-outline btn-lg">Order Now</a>
+                </p>
+                <div class="mt-4 d-flex gap-3">
+                    <div>
+                        <small class="text-muted">Trusted by</small>
+                        <div class="d-flex align-items-center gap-2 mt-1">
+                            <img src="/images/logo.jpg" alt="logo" loading="lazy" style="height:34px;width:34px;border-radius:6px;object-fit:cover;" onerror="this.onerror=null;this.src='/images/msfort-logo-placeholder.svg';this.classList.add('placeholder');" />
+                            <strong>MSFortRestaurant</strong>
+                        </div>
+                    </div>
+                    <div class="ms-4">
+                        <small class="text-muted">Open hours</small>
+                        <div class="mt-1">Mon - Sun: 9:00 AM - 10:00 PM</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-5 d-none d-lg-block">
+                <div class="hero-card shadow rounded overflow-hidden">
+                    <img src="~/Images/i1.jpg" loading="lazy" class="img-fluid" alt="Featured dish" onerror="this.onerror=null;this.src='https://via.placeholder.com/800x600.png?text=Image+Unavailable';this.classList.add('placeholder');">
+                    <div class="p-3 bg-white">
+                        <h5 class="mb-1">Chef's Recommendation</h5>
+                        <p class="small text-muted mb-2">Try our seasonal grilled salmon with citrus glaze.</p>
+                        <a asp-area="" asp-controller="Product" asp-action="Index" class="btn btn-sm btn-primary">View Dish</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Popular recipes section -->
+<section class="popular py-5 bg-light">
+    <div class="container">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h2 class="h3">Popular Dishes</h2>
+            <a asp-area="" asp-controller="Product" asp-action="Index" class="small">View all menu items &raquo;</a>
+        </div>
+
+        <div class="row g-3">
+            <div class="col-md-4">
+                <div class="card shadow-sm h-100">
+                    <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1200&q=80" loading="lazy" class="card-img-top" alt="Gourmet dish" onerror="this.onerror=null;this.src='https://via.placeholder.com/1200x800.png?text=Image+Unavailable';this.classList.add('placeholder');">
+                    <div class="card-body">
+                        <h5 class="card-title">Pan-seared Steak</h5>
+                        <p class="card-text small text-muted">Served with roasted vegetables and garlic butter.</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <a asp-area="" asp-controller="Product" asp-action="Index" class="btn btn-sm btn-outline-primary">View</a>
+                            <a asp-area="" asp-controller="Order" asp-action="Create" class="btn btn-sm btn-primary">Order</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card shadow-sm h-100">
+                    <img src="~/Images/sml.jpg" loading="lazy" class="card-img-top" alt="Salmon dish" onerror="this.onerror=null;this.src='https://via.placeholder.com/1200x800.png?text=Image+Unavailable';this.classList.add('placeholder');">
+                    <div class="card-body">
+                        <h5 class="card-title">Citrus Grilled Salmon</h5>
+                        <p class="card-text small text-muted">Fresh salmon with a zesty citrus glaze and seasonal greens.</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <a asp-area="" asp-controller="Product" asp-action="Index" class="btn btn-sm btn-outline-primary">View</a>
+                            <a asp-area="" asp-controller="Order" asp-action="Create" class="btn btn-sm btn-primary">Order</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card shadow-sm h-100">
+                    <img src="https://images.unsplash.com/photo-1551218808-94e220e084d2?auto=format&fit=crop&w=1200&q=80" loading="lazy" class="card-img-top" alt="Pasta dish" onerror="this.onerror=null;this.src='https://via.placeholder.com/1200x800.png?text=Image+Unavailable';this.classList.add('placeholder');">
+                    <div class="card-body">
+                        <h5 class="card-title">Truffle Tagliatelle</h5>
+                        <p class="card-text small text-muted">Homemade pasta tossed in a creamy truffle sauce.</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <a asp-area="" asp-controller="Product" asp-action="Index" class="btn btn-sm btn-outline-primary">View</a>
+                            <a asp-area="" asp-controller="Order" asp-action="Create" class="btn btn-sm btn-primary">Order</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Features / Why choose us -->
+<section class="features py-5">
+    <div class="container">
+        <div class="row text-center g-4">
+            <div class="col-md-4">
+                <div class="p-4 bg-white rounded shadow-sm h-100">
+                    <i class="bi bi-award-fill fs-1 text-warning"></i>
+                    <h5 class="mt-3">Top Quality Ingredients</h5>
+                    <p class="small text-muted">Sourced from trusted local farmers and suppliers.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="p-4 bg-white rounded shadow-sm h-100">
+                    <i class="bi bi-clock-fill fs-1 text-warning"></i>
+                    <h5 class="mt-3">Fast & Reliable</h5>
+                    <p class="small text-muted">Timely delivery and realtime order tracking.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="p-4 bg-white rounded shadow-sm h-100">
+                    <i class="bi bi-people-fill fs-1 text-warning"></i>
+                    <h5 class="mt-3">Experienced Chefs</h5>
+                    <p class="small text-muted">Creative recipes prepared with passion.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Newsletter / CTA -->
+<section class="newsletter py-5 bg-primary text-white">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-md-8">
+                <h4 class="fw-bold">Get seasonal offers & recipe tips</h4>
+                <p class="mb-0 small">Subscribe to our newsletter and never miss our weekly specials.</p>
+            </div>
+            <div class="col-md-4 mt-3 mt-md-0">
+                <form class="d-flex" onsubmit="event.preventDefault(); alert('Thanks for subscribing! (demo)');">
+                    <input type="email" class="form-control me-2" placeholder="Enter your email" required />
+                    <button class="btn btn-accent" type="submit">Subscribe</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    /* Home page enhancements */
+    .home-hero {
+        background: linear-gradient( 135deg, rgba(0, 0, 0, 0.75), rgba(212, 175, 55, 0.35) );
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+    }
+
+        .home-hero .display-3 {
+            color: #fff;
+        }
+
+    .hero-card img { height: 260px; width:100%; object-fit:cover; }
+    .popular .card-img-top { height: 200px; object-fit:cover; }
+    .features .bi { opacity: .95; }
+    .newsletter { background-image: linear-gradient(90deg, rgba(0,0,0,0.08), rgba(0,0,0,0.02)); }
+</style>
