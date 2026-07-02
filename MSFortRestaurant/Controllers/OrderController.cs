@@ -112,7 +112,7 @@ namespace MSFortRestaurant.Controllers
             };
 
             //Add OrderItems to the entity
-            foreach (var item in order.OrderItems)
+            foreach (var item in model.OrderItems)
             {
                 order.OrderItems.Add(new OrderItem
                 {
