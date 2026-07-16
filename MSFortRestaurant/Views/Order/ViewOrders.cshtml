@@ -2,31 +2,48 @@
 @{
     ViewData["Title"] = "My Orders";
 }
-<table class=" table table-bordered">
-    <thead>
-        <tr>
-            <th>Order ID</th>
-            <th>Order Date</th>
-            <th>Total Amount</th>
-            <th>Order Items</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach(var order in Model)
-        {
-            <tr>
-                <td>@order.OrderId</td>
-                <td>@order.OrderDate.ToString("MM/dd/yyyy")</td>
-                <td>@order.TotalAmount.ToString("C")</td>
-                <td>
-                    <ul>
-                        @foreach(var item in order.OrderItems)
+
+<style>
+    .orders-card { max-width: 1100px; margin: 20px auto; }
+    .order-items-list { margin: 0; padding-left: 1rem; }
+</style>
+
+<div class="container orders-card">
+    <div class="card shadow-sm">
+        <div class="card-header bg-primary text-white">
+            <h3 class="mb-0">My Orders</h3>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-bordered align-middle">
+                    <thead class="table-light">
+                        <tr>
+                            <th>Order ID</th>
+                            <th>Order Date</th>
+                            <th class="text-end">Total Amount</th>
+                            <th>Order Items</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var order in Model)
                         {
-                            <li>@item.Product.Name - @item.Quantity x @item.Price.ToString("C")</li>
+                            <tr>
+                                <td>@order.OrderId</td>
+                                <td>@order.OrderDate.ToString("MM/dd/yyyy")</td>
+                                <td class="text-end">@order.TotalAmount.ToString("C")</td>
+                                <td>
+                                    <ul class="order-items-list">
+                                        @foreach (var item in order.OrderItems)
+                                        {
+                                            <li>@item.Product.Name - @item.Quantity x @item.Price.ToString("C")</li>
+                                        }
+                                    </ul>
+                                </td>
+                            </tr>
                         }
-                    </ul>
-                </td>
-            </tr>
-        }
-    </tbody>
-</table>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

@@ -35,3 +35,23 @@ body {
     object-fit:cover;
     
 }
+
+/* Carousel visuals */
+#restaurantCarousel .carousel-item img {
+    height: 60vh;
+    object-fit: cover;
+    filter: contrast(1.02) saturate(1.05);
+}
+
+.carousel-caption-bg {
+    background: rgba(0,0,0,0.45);
+    display: inline-block;
+    padding: .75rem 1rem;
+    border-radius: .5rem;
+    text-align: left;
+}
+
+.carousel-caption h3 {
+    font-weight: 700;
+}
+

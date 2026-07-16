@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿﻿
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -20,40 +21,112 @@
 
     <!-- Added: small custom styles to enhance layout look and feel -->
     <style>
-        :root {
-            --accent: #ff7a18; /* warm orange */
-            --accent-2: #ffb199; /* light peach */
-            --primary-dark: #0d3b66;
-            --muted: #6c757d;
-        }
-        body { font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; background: linear-gradient(180deg,#fdfbfb, #f1f6f9); }
-        .hero-banner { background-image: linear-gradient(90deg, rgba(0,0,0,0.35), rgba(0,0,0,0.2)), url('/images/restaurant-hero.jpg'); background-size: cover; background-position: center; color: white; padding: 4rem 0; }
-        .hero-banner .lead { font-size: 1.15rem; opacity: 0.95; }
-        .navbar-brand-enhanced { display:flex; align-items:center; gap:.5rem; font-weight:700; color:var(--primary-dark); }
-        .navbar-brand-enhanced img { height:34px; width:34px; object-fit:cover; border-radius:6px; }
-        .footer-dark { background: linear-gradient(90deg,#0b2447,#163f6f); color:rgba(255,255,255,0.95); padding:2rem 0; }
-        .toast-container { position: fixed; top: 1rem; right: 1rem; z-index: 1080; }
+            :root {
+                --accent: #ff7a18; /* warm orange */
+                --accent-2: #ffb199; /* light peach */
+                --primary-dark: #0d3b66;
+                --muted: #6c757d;
+            }
 
-        /* Accent buttons */
-        .btn-accent {
-            background: linear-gradient(90deg,var(--accent),var(--accent-2));
-            border: none; color: #fff; box-shadow: 0 6px 18px rgba(255,122,24,0.18);
-        }
-        .btn-accent-outline {
-            background: rgba(255,122,24,0.06); border:1px solid rgba(255,122,24,0.2); color:var(--accent);
-        }
+            body {
+                font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+                background: linear-gradient(180deg,#fdfbfb, #f1f6f9);
+            }
 
-        /* Make carousel captions pop with colorful accent underline */
-        .carousel-caption-bg { background: linear-gradient(180deg, rgba(0,0,0,0.5), rgba(0,0,0,0.35)); display:inline-block; padding: .85rem 1rem; border-radius: .5rem; text-align:left; border-left: 4px solid var(--accent); }
+            .hero-banner {
+                background-image: linear-gradient(90deg, rgba(0,0,0,0.35), rgba(0,0,0,0.2)), url('/images/restaurant-hero.jpg');
+                background-size: cover;
+                background-position: center;
+                color: white;
+                padding: 4rem 0;
+            }
 
-        /* Fallback styling for placeholders */
-        img.placeholder { filter: saturate(0.95) contrast(0.95); background: #f8f9fa; }
+                .hero-banner .lead {
+                    font-size: 1.15rem;
+                    opacity: 0.95;
+                }
 
-        /* Social buttons colorful */
-        .btn-social{ color:#fff; border:none; display:inline-flex; align-items:center; justify-content:center; width:36px; height:36px; border-radius:6px; }
-        .btn-facebook{ background: linear-gradient(90deg,#3b5998,#5b8bd6); }
-        .btn-instagram{ background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%); }
-        .btn-twitter{ background: linear-gradient(90deg,#1da1f2,#2aa7f6); }
+            .navbar-brand-enhanced {
+                display: flex;
+                align-items: center;
+                gap: .5rem;
+                font-weight: 700;
+                color: var(--primary-dark);
+            }
+
+                .navbar-brand-enhanced img {
+                    height: 34px;
+                    width: 34px;
+                    object-fit: cover;
+                    border-radius: 6px;
+                }
+
+            .footer-dark {
+                background: linear-gradient(90deg,#0b2447,#163f6f);
+                color: rgba(255,255,255,0.95);
+                padding: 2rem 0;
+            }
+
+            .toast-container {
+                position: fixed;
+                top: 1rem;
+                right: 1rem;
+                z-index: 1080;
+            }
+
+            /* Accent buttons */
+            .btn-accent {
+                background: linear-gradient(90deg,var(--accent),var(--accent-2));
+                border: none;
+                color: #fff;
+                box-shadow: 0 6px 18px rgba(255,122,24,0.18);
+            }
+
+            .btn-accent-outline {
+                background: rgba(255,122,24,0.06);
+                border: 1px solid rgba(255,122,24,0.2);
+                color: var(--accent);
+            }
+
+            /* Make carousel captions pop with colorful accent underline */
+            .carousel-caption-bg {
+                background: linear-gradient(180deg, rgba(0,0,0,0.5), rgba(0,0,0,0.35));
+                display: inline-block;
+                padding: .85rem 1rem;
+                border-radius: .5rem;
+                text-align: left;
+                border-left: 4px solid var(--accent);
+            }
+
+            /* Fallback styling for placeholders */
+            img.placeholder {
+                filter: saturate(0.95) contrast(0.95);
+                background: #f8f9fa;
+            }
+
+            /* Social buttons colorful */
+            .btn-social {
+                color: #fff;
+                border: none;
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                width: 36px;
+                height: 36px;
+                border-radius: 6px;
+            }
+
+            .btn-facebook {
+                background: linear-gradient(90deg,#3b5998,#5b8bd6);
+            }
+
+            .btn-instagram {
+                background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+            }
+
+            .btn-twitter {
+                background: linear-gradient(90deg,#1da1f2,#2aa7f6);
+            }
     </style>
 
 </head>
@@ -61,9 +134,7 @@
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container-fluid">
-                <!-- Original brand kept. Commented and enhanced below as requested -->
-                <!-- Original: <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">MSFortRestaurant</a> -->
-                <!-- Added: enhanced brand with logo and subtle styling (keeps original line above unchanged) -->
+      
                 <a class="navbar-brand navbar-brand-enhanced" asp-area="" asp-controller="Home" asp-action="Index">
                     <!-- Place your high-resolution logo at wwwroot/images/msfort-logo.png -->
                     <img src="/Images/logo.jpg" alt="MSFort" loading="lazy" width="34" height="34"
@@ -77,16 +148,12 @@
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
-                            <!-- Original: <a class="nav-link text-dark" asp-area="" asp-controller="Ingredient" asp-action="Index">Ingredients</a> -->
-                            <!-- Added: make nav link more prominent and with icon (keeps original line above unchanged) -->
                             <a class="nav-link text-dark" asp-area="" asp-controller="Ingredient" asp-action="Index"><i class="bi bi-leaf-fill"></i> Ingredients</a>
                         </li>
                         <li class="nav-item">
-                            <!-- Original: <a class="nav-link text-dark" asp-area="" asp-controller="Product" asp-action="Index">Menu Items</a> -->
                             <a class="nav-link text-dark" asp-area="" asp-controller="Product" asp-action="Index"><i class="bi bi-journal-food"></i> Menu Items</a>
                         </li>
                         <li class="nav-item">
-                            <!-- Original: <a class="nav-link text-dark" asp-area="" asp-controller="Order" asp-action="Create">Create Order</a> -->
                             <a class="nav-link text-dark" asp-area="" asp-controller="Order" asp-action="Create"><i class="bi bi-cart-plus-fill"></i> Create Order</a>
                         </li>
                     </ul>
@@ -94,22 +161,7 @@
                 </div>
             </div>
         </nav>
-        <!-- Added: Hero banner to make app look like a realistic restaurant app -->
-        <!-- Original hero-banner preserved (commented) -->
-        <!--
-        <section class="hero-banner text-center">
-            <div class="container">
-                <h1 class="display-5 fw-bold">Taste the difference at MSFort</h1>
-                <p class="lead">Fresh ingredients, seasonal recipes, and realtime order updates for a delightful dining experience.</p>
-                <p class="mt-3">
-                    <a class="btn btn-primary btn-lg me-2" asp-area="" asp-controller="Product" asp-action="Index">View Menu</a>
-                    <a class="btn btn-outline-light btn-lg" asp-area="" asp-controller="Order" asp-action="Create">Order Now</a>
-                </p>
-            </div>
-        </section>
-        -->
 
-        <!-- Added: Carousel with attractive, realistic images from Unsplash (keeps original hero commented above) -->
         <section class="mb-4">
             <div id="restaurantCarousel" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-indicators">
@@ -159,13 +211,6 @@
                 </button>
             </div>
         </section>
-
-        <style>
-            /* Carousel visuals */
-            #restaurantCarousel .carousel-item img { height: 60vh; object-fit: cover; filter: contrast(1.02) saturate(1.05); }
-            .carousel-caption-bg { background: rgba(0,0,0,0.45); display:inline-block; padding: .75rem 1rem; border-radius: .5rem; text-align:left; }
-            .carousel-caption h3 { font-weight:700; }
-        </style>
     </header>
     <div class="container mt-4">
         <main role="main" class="pb-3">
@@ -175,14 +220,6 @@
 
     <!-- Added: toast container for realtime notifications (SignalR messages, order updates) -->
     <div class="toast-container" id="realtimeToasts" aria-live="polite" aria-atomic="true"></div>
-
-    <!-- Enhanced footer while keeping original markup for traceability -->
-    <!-- Original footer retained below -->
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2026 - MSFortRestaurant - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-        </div>
-    </footer>
 
     <!-- Added: darker extended footer with contact and socials -->
     <footer class="footer-dark">
@@ -203,59 +240,57 @@
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
 
-    <!-- Added: SignalR client (CDN) for realtime features. Configure server hub at /hubs/notifications -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/7.0.5/signalr.min.js" integrity="" crossorigin="anonymous"></script>
 
-    <!-- Added: simple realtime notification client that shows toasts when the server pushes messages -->
     <script>
-        (function () {
-            // Connect to SignalR hub (server must provide /hubs/notifications)
-            try {
-                const connection = new signalR.HubConnectionBuilder()
-                    .withUrl('/hubs/notifications')
-                    .withAutomaticReconnect()
-                    .build();
+            (function() {
+              
+                try {
+                    const connection = new signalR.HubConnectionBuilder()
+                        .withUrl('/hubs/notifications')
+                        .withAutomaticReconnect()
+                        .build();
 
-                connection.on('ReceiveNotification', function (title, message) {
-                    showToast(title || 'Notification', message || 'You have an update.');
-                });
+                    connection.on('ReceiveNotification', function(title, message) {
+                        showToast(title || 'Notification', message || 'You have an update.');
+                    });
 
-                connection.start().catch(function (err) {
-                    console && console.error('SignalR connection error:', err.toString());
-                });
-            } catch (e) {
-                console && console.debug('SignalR not available', e);
-            }
+                    connection.start().catch(function(err) {
+                        console && console.error('SignalR connection error:', err.toString());
+                    });
+                } catch (e) {
+                    console && console.debug('SignalR not available', e);
+                }
 
-            function showToast(title, body) {
-                const container = document.getElementById('realtimeToasts');
-                if (!container) return;
-                const toastEl = document.createElement('div');
-                toastEl.className = 'toast align-items-center text-bg-light border-0 mb-2';
-                toastEl.setAttribute('role', 'alert');
-                toastEl.setAttribute('aria-live', 'assertive');
-                toastEl.setAttribute('aria-atomic', 'true');
-                toastEl.innerHTML = `
-                    <div class="d-flex">
-                        <div class="toast-body">
-                            <strong>${escapeHtml(title)}</strong><div>${escapeHtml(body)}</div>
-                        </div>
-                        <button type="button" class="btn-close me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
-                    </div>`;
-                container.appendChild(toastEl);
-                const toast = new bootstrap.Toast(toastEl, { delay: 8000 });
-                toast.show();
-            }
+                function showToast(title, body) {
+                    const container = document.getElementById('realtimeToasts');
+                    if (!container) return;
+                    const toastEl = document.createElement('div');
+                    toastEl.className = 'toast align-items-center text-bg-light border-0 mb-2';
+                    toastEl.setAttribute('role', 'alert');
+                    toastEl.setAttribute('aria-live', 'assertive');
+                    toastEl.setAttribute('aria-atomic', 'true');
+                    toastEl.innerHTML = `
+                                <div class="d-flex">
+                                    <div class="toast-body">
+                                        <strong>${escapeHtml(title)}</strong><div>${escapeHtml(body)}</div>
+                                    </div>
+                                    <button type="button" class="btn-close me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+                                </div>`;
+                    container.appendChild(toastEl);
+                    const toast = new bootstrap.Toast(toastEl, { delay: 8000 });
+                    toast.show();
+                }
 
-            function escapeHtml(unsafe) {
-                return unsafe
-                    .replace(/&/g, '&amp;')
-                    .replace(/</g, '&lt;')
-                    .replace(/>/g, '&gt;')
-                    .replace(/"/g, '&quot;')
-                    .replace(/'/g, '&#039;');
-            }
-        })();
+                function escapeHtml(unsafe) {
+                    return unsafe
+                        .replace(/&/g, '&amp;')
+                        .replace(/</g, '&lt;')
+                        .replace(/>/g, '&gt;')
+                        .replace(/"/g, '&quot;')
+                        .replace(/'/g, '&#039;');
+                }
+            })();
     </script>
 
     @await RenderSectionAsync("Scripts", required: false)
